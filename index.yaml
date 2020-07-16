@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  cass-operator:
+  - apiVersion: v2
+    created: "2020-07-16T16:19:37.765640028Z"
+    description: Helm chart for Cass Operator.
+    digest: 586b8cd120d565cc27f72862a88de1297e1ba03f909623ebd3cd759ad9a43fbf
+    name: cass-operator
+    urls:
+    - https://github.com/datastax/charts/releases/download/cass-operator-1.2.0/cass-operator-1.2.0.tgz
+    version: 1.2.0
+generated: "2020-07-16T16:19:37.63358855Z"
