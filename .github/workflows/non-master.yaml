@@ -18,8 +18,10 @@ jobs:
       - name: Fetch history
         run: git fetch --prune --unshallow
       
-      - name: Create kubeconfig directory
-        run: mkdir ~/.kube
+      - name: Create Kubeconfig directories
+        run: |
+          mkdir ~/.kube
+          touch ~/.kube/config
 
       - name: Run chart-testing (lint)
         id: lint
