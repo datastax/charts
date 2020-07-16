@@ -22,7 +22,7 @@ jobs:
         id: lint
         uses: helm/chart-testing-action@v1.0.0-rc.1
         with:
-          command: lint
+          command: lint --validate-maintainers=false
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.0.0-alpha.3
