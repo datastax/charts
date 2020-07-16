@@ -15,11 +15,16 @@ jobs:
       - name: Fetch history
         run: git fetch --prune --unshallow
 
+      - name: Create Kubeconfig directories
+        run: |
+          mkdir ~/.kube
+          touch ~/.kube/config
+
       - name: Run chart-testing (lint)
         id: lint
         uses: helm/chart-testing-action@v1.0.0-rc.1
         with:
-          command: lint --validate-maintainers=false
+          command: lint
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.0.0-alpha.3
