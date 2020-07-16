@@ -1,4 +1,0 @@
-apiVersion: v2
-name: cass-operator
-version: 1.1.0
-description: Helm chart for Cass Operator.
