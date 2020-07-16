@@ -2,3 +2,5 @@ apiVersion: v2
 name: cass-operator
 version: 1.3.0
 description: Helm chart for Cass Operator.
+appVersion: 1.3.0
+home: https://github.com/datastax/cass-operator
