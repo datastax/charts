@@ -25,7 +25,7 @@ jobs:
 
       - name: Run chart-testing (lint)
         id: lint
-        uses: helm/chart-testing-action@v1.0.0-rc.1
+        uses: helm/chart-testing-action@v1.0.0
         with:
           command: lint
           config: ct-master.yaml
@@ -37,7 +37,7 @@ jobs:
           version: v1.18.2-k3s1
 
       - name: Run chart-testing (install)
-        uses: helm/chart-testing-action@v1.0.0-rc.1
+        uses: helm/chart-testing-action@v1.0.0
         with:
           command: install
           config: ct-master.yaml
