@@ -18,22 +18,20 @@ jobs:
       - name: Fetch history
         run: git fetch --prune --unshallow
       
-      - name: Create Kubeconfig directories
-        run: |
-          mkdir ~/.kube
-          touch ~/.kube/config
+      # - name: Create Kubeconfig directories
+      #   run: |
+      #     mkdir ~/.kube
+      #     touch ~/.kube/config
 
       - name: Run chart-testing (lint)
         id: lint
         uses: helm/chart-testing-action@v1.0.0-rc.1
         with:
           command: lint
-          config: ct.yaml
+          config: ct-master.yaml
 
-      - name: Create kind cluster
-        uses: helm/kind-action@v1.0.0-alpha.3
-        # Only build a kind cluster if there are chart changes to test.
-        if: steps.lint.outputs.changed == 'true'
+      - name: actions-k3s
+        uses: debianmaster/actions-k3s@v1.0.0
 
       - name: Run chart-testing (install)
         uses: helm/chart-testing-action@v1.0.0-rc.1
