@@ -29,12 +29,14 @@ jobs:
 
       - name: actions-k3s
         uses: debianmaster/actions-k3s@v1.0.0
+        id: k3s
 
       - name: Run chart-testing (install)
         uses: helm/chart-testing-action@v1.0.0-rc.1
         with:
           command: install
           config: ct-master.yaml
+          kubeconfig: ${{ steps.k3s.kubeconfig }}
   
   release:
     needs: lint-test
