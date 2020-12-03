@@ -2,6 +2,20 @@ apiVersion: v1
 entries:
   cass-operator:
   - apiVersion: v2
+    appVersion: 1.5.0
+    created: "2020-11-22T20:26:28.974191929-05:00"
+    description: Helm chart for Cass Operator.
+    digest: 04887a13c367055973f7af6f832b53bf01aa388410ff59a90dda58dc71285129
+    home: https://github.com/datastax/cass-operator
+    maintainers:
+    - email: cass-operator@datastax.coom
+      name: Cassandra Operator Team
+      url: https://www.datastax.com/
+    name: cass-operator
+    urls:
+    - https://github.com/datastax/charts/releases/download/cass-operator-1.5.0/cass-operator-1.5.0.tgz
+    version: 1.5.0
+  - apiVersion: v2
     appVersion: 1.4.1
     created: "2020-09-10T20:54:32.206796992Z"
     description: Helm chart for Cass Operator.
