@@ -28,7 +28,7 @@ jobs:
           config: ct-master.yaml
 
       - name: actions-k3s
-        uses: debianmaster/actions-k3s@v1.0.0
+        uses: debianmaster/actions-k3s@v1.0.1
         id: k3s
         with:
           version: v1.18.2-k3s1
