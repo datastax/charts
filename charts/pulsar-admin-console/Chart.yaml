@@ -21,3 +21,4 @@ description: Helm chart for Datastax Pulsar Admin Console
 type: application
 version: 0.0.1
 appVersion: "2.1.6"
+home: https://github.com/datastax/pulsar-admin-console
