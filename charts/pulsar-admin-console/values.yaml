@@ -66,7 +66,7 @@ env: []
 createUserSecret:
   enabled: false
   user: admin
-  password: admin
+  password: ""
 
 config:
   auth_mode: none

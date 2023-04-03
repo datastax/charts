@@ -12,3 +12,8 @@ helm install datastax/cass-operator
 # Helm 3
 helm install cass-operator datastax/cass-operator
 ```
+
+
+## Pulsar Admin Console
+
+See [pulsar-admin-console](charts/pulsar-admin-console/README.md)

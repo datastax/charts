@@ -56,7 +56,7 @@ data:
         "oauth2": {
           "identity_provider_url": "{{ .Values.config.server_config.oauth2.identity_provider_url }}",
           "token_endpoint": "{{ .Values.config.server_config.oauth2.token_endpoint }}",
-          "grant_type": "{{ .Values.config.server_config.oauth2.token_endpoint }}"
+          "grant_type": "{{ .Values.config.server_config.oauth2.grant_type }}"
         },
         "user_auth": {
           "username": "{{ .Values.config.server_config.user_auth.username }}",
