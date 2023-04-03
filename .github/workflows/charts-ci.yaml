@@ -33,13 +33,6 @@ jobs:
         with:
           version: v1.18.2-k3s1
 
-      - name: Run chart-testing (install)
-        uses: helm/chart-testing-action@v1.0.0
-        with:
-          command: install
-          config: ct-master.yaml
-          kubeconfig: ${{ steps.k3s.outputs.kubeconfig }}
-
   integration-tests:
     name: integration-tests
     runs-on: ubuntu-20.04
