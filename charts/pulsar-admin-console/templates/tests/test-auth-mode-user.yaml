@@ -15,7 +15,7 @@
 #
 #
 
-{{- if .Values.enableTests }}
+{{- if .Values.tests.enabled }}
 apiVersion: v1
 kind: Pod
 metadata:

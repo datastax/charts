@@ -115,4 +115,7 @@ config:
       grant_type: "password"
 
 # For testing purpose
-enableTests: false
+tests: 
+  enabled: false
+  pulsarImage: ""
+

@@ -14,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-enableTests: true
+tests: 
+  enabled: true
+  pulsarImage: apachepulsar/pulsar:2.11.0
 
 config:
   

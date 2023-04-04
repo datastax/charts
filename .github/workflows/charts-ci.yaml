@@ -36,12 +36,26 @@ jobs:
   integration-tests:
     name: integration-tests
     runs-on: ubuntu-20.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - chart: pulsar-admin-console
+          
     steps:
       - name: Check out code
         uses: actions/checkout@v1
         with:
           fetch-depth: 1
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            ${{ matrix.chart }}:
+              - 'charts/${{ matrix.chart }}/**'
      
-      - name: Run Pulsar Admin Console tests
+      - name: Run ${{ matrix.chart }} tests
+        if: steps.changes.outputs.${{ matrix.chart }} == 'true'
         run: |
-          ./charts/tests/run-tests.sh pulsar-admin-console
+          ./charts/tests/run-tests.sh ${{ matrix.chart }}
