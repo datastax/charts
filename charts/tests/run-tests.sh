@@ -16,7 +16,7 @@
 # limitations under the License.
 #
 
-set -e
+set -ex
 this_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 chart=${1:-""}
 filter_tests=${2:-""}
