@@ -93,4 +93,16 @@ entries:
     urls:
     - https://github.com/datastax/charts/releases/download/cass-operator-1.2.0/cass-operator-1.2.0.tgz
     version: 1.2.0
+  pulsar-admin-console:
+  - apiVersion: v2
+    appVersion: 2.1.6
+    created: "2023-04-04T18:30:20.745277334Z"
+    description: Helm chart for Datastax Pulsar Admin Console
+    digest: f2492d4ec67f2e2634c5b62142f3c82c8bac4ba94a9d57c1b5870582745f28aa
+    home: https://github.com/datastax/pulsar-admin-console
+    name: pulsar-admin-console
+    type: application
+    urls:
+    - https://github.com/datastax/charts/releases/download/pulsar-admin-console-0.0.1/pulsar-admin-console-0.0.1.tgz
+    version: 0.0.1
 generated: "2020-07-16T16:19:37.63358855Z"
