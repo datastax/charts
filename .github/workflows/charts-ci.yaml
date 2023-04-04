@@ -1,0 +1,61 @@
+name: Charts CI
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Fetch history
+        run: git fetch --prune --unshallow
+      
+      - name: Create Kubeconfig directories
+        run: |
+          mkdir ~/.kube
+          touch ~/.kube/config
+
+      - name: Run chart-testing (lint)
+        id: lint
+        uses: helm/chart-testing-action@v1.0.0
+        with:
+          command: lint
+          config: ct-master.yaml
+
+      - name: actions-k3s
+        uses: debianmaster/actions-k3s@v1.0.1
+        id: k3s
+        with:
+          version: v1.18.2-k3s1
+
+  integration-tests:
+    name: integration-tests
+    runs-on: ubuntu-20.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - chart: pulsar-admin-console
+          
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            ${{ matrix.chart }}:
+              - 'charts/${{ matrix.chart }}/**'
+     
+      - name: Run ${{ matrix.chart }} tests
+        if: steps.changes.outputs.${{ matrix.chart }} == 'true'
+        run: |
+          ./charts/tests/run-tests.sh ${{ matrix.chart }}
