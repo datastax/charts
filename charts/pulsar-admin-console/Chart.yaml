@@ -19,6 +19,6 @@ apiVersion: v2
 name: pulsar-admin-console
 description: Helm chart for Datastax Pulsar Admin Console
 type: application
-version: 0.0.1
-appVersion: "2.1.6"
+version: 0.1.0
+appVersion: "2.2.0"
 home: https://github.com/datastax/pulsar-admin-console
