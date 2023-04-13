@@ -43,6 +43,24 @@ Alternatively, you can specify the token in the values via the `config.server_co
 
 Note that the client will receive the token after being authenticated in the admin console.
 
+The above configuration is for the admin API calls.
+To authenticate the Pulsar client, you'll need to specify the private key path or a secret used to generate a valid JWT token.
+
+```
+additionalVolumes:
+    - name: token-private-key
+        secret:
+            secretName: token-private-key
+additionalVolumeMounts:
+    - name: token-private-key
+      mountPath: /pulsar-private-key
+config:
+    server_config:
+        token_options:
+            private_key_path: /pulsar-private-key
+            algorithm: RS256
+```
+
 
 ### Admin Console authentication
 

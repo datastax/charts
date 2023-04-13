@@ -41,6 +41,12 @@ data:
         "function_worker_url": "{{ .Values.config.server_config.function_worker_url }}",
         "log_level": "{{ .Values.config.server_config.log_level }}",
         "admin_token": "{{ .Values.config.server_config.admin_token }}",
+        "token_options": {
+          "private_key_path": "{{ .Values.config.server_config.token_options.private_key_path }}",
+          "algorithm": "{{ .Values.config.server_config.token_options.algorithm }}",
+          "expires_in": "{{ .Values.config.server_config.token_options.expires_in }}",
+          "claim": "{{ .Values.config.server_config.token_options.claim }}"
+        },
         "kubernetes": {
           "k8s_namespace": "{{ .Release.Namespace }}",
           "kubernetes_service_host": "{{ .Values.config.server_config.kubernetes.kubernetes_service_host }}",
