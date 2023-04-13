@@ -70,10 +70,10 @@ createUserSecret:
 
 config:
   auth_mode: none
-  cluster_name: default
+  cluster_name: pulsar
   tenant: public
   oauth_client_id: ""
-  polling_interval: ""
+  polling_interval: "10000"
   ca_certificate: ""
   api_version: "2.11.0"
   notice_text: ""
@@ -96,6 +96,7 @@ config:
     token_path: ""
     admin_token: ""
     token_secret: ""
+    token_options: {}
     ssl:
       enabled: false
       verify_certs: true
